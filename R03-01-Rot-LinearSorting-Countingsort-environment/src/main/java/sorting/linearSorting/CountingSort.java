@@ -43,11 +43,11 @@ public class CountingSort extends AbstractSorting<Integer> {
 		
 		}
 		int[]array2 = new int[array.length];
-		System.out.println("---");
+		//System.out.println("---");
 		for(int a = rightIndex; a >= leftIndex; a--) {
 			array2[helper[array[a]]-1] = array[a];
 			helper[array[a]]--;
-			;
+			
 		
 			
 			

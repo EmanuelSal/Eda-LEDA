@@ -1,5 +1,7 @@
 package orderStatistic;
 
+import util.Util;
+
 /**
  * Uma implementacao da interface KLargest que usa estatisticas de ordem para 
  * retornar um array com os k maiores elementos de um conjunto de dados/array.
@@ -29,9 +31,18 @@ public class KLargestOrderStatisticsImpl<T extends Comparable<T>> implements KLa
 
 	@Override
 	public T[] getKLargest(T[] array, int k) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
-		//este metodo deve obrigatoriamente usar o orderStatistics abaixo.
+		T[] aux = (T[]) new Comparable[k]; 
+		if (!(array.length < k)) {
+
+			T pivot = orderStatistics(array, k);
+			for (int i = 0; i < array.length; i++) {
+				if (array[i].compareTo(pivot) >= 0) {
+					aux[i] = array[i];
+				}
+			} 
+		} 
+		return aux;
+		
 	}
 
 	/**
@@ -43,10 +54,23 @@ public class KLargestOrderStatisticsImpl<T extends Comparable<T>> implements KLa
 	 * 
 	 * @param array
 	 * @param k
-	 * @return
+	 * @return valor da k-esima posicao
 	 */
 	public T orderStatistics(T[] array, int k){
+		T valor = null;
+		if (!(k > array.length || k < 1)) {
+			for (int i = 1; i < array.length; i++) {
+				
+				int j = i;
+				while (j > 0 && array[j].compareTo(array[j-1]) < 0) {
+					Util.swap(array, j, j -1);
+					j--;
+				}
+			} valor = array[k -1];
+		}		
+		return valor;
+		
 		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");		
+		//throw new UnsupportedOperationException("Not implemented yet!");		
 	}
 }

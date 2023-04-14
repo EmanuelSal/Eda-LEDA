@@ -1,9 +1,6 @@
 package sorting.divideAndConquer;
 
 import java.util.Arrays;
-import java.util.Iterator;
-
-import javax.imageio.stream.MemoryCacheImageOutputStream;
 
 import sorting.AbstractSorting;
 
@@ -18,25 +15,24 @@ public class MergeSort<T extends Comparable<T>> extends AbstractSorting<T> {
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
 		if (leftIndex >= rightIndex || leftIndex < 0 || rightIndex >= array.length) return;
-		else {
-			int middle = (leftIndex + rightIndex) / 2;
-			sort(array, leftIndex, middle);
-			sort(array, middle+1, rightIndex);
+	
+		int middle = (leftIndex + rightIndex) / 2;
+		sort(array, leftIndex, middle);
+		sort(array, middle+1, rightIndex);
 			
-			merge(array, leftIndex, middle, rightIndex);
-		}
-		//throw new UnsupportedOperationException("Not implemented yet!");
+		merge(array, leftIndex, middle, rightIndex);
+		
 	}
 
-	private void merge(T[] array, int ini, int middle, int fim) {
+	private void merge(T[] array, int start, int middle, int end) {
 		T[] aux = Arrays.copyOf(array, array.length);
 		
 		
-		int i = ini;
+		int i = start;
 		int j = middle +1;
-		int k = ini;
+		int k = start;
 		
-		while (i <= middle && j <= fim) {
+		while (i <= middle && j <= end) {
 			if(aux[i].compareTo(array[j]) <= 0)
 				array[k] = aux[i++]; 
 			
@@ -47,7 +43,7 @@ public class MergeSort<T extends Comparable<T>> extends AbstractSorting<T> {
 		while (i <= middle) 
 			array[k++] = aux[i++];
 			
-		while (j <= fim)
+		while (j <= end)
 			array[k++] = aux[j++];
 			
 		

@@ -47,15 +47,14 @@ public class HybridMergeSort<T extends Comparable<T>> extends
         }
     }
 
-    private void merge(T[] array, int ini, int middle, int fim) {
-    	T[] aux = Arrays.copyOf(array, array.length);
+    private void merge(T[] array, int start, int middle, int end) {
+		T[] aux = Arrays.copyOf(array, array.length);
 		
-		
-		int i = ini;
+		int i = start;
 		int j = middle +1;
-		int k = ini;
+		int k = start;
 		
-		while (i <= middle && j <= fim) {
+		while (i <= middle && j <= end) {
 			if(aux[i].compareTo(array[j]) <= 0)
 				array[k] = aux[i++]; 
 			
@@ -66,9 +65,8 @@ public class HybridMergeSort<T extends Comparable<T>> extends
 		while (i <= middle) 
 			array[k++] = aux[i++];
 			
-		while (j <= fim)
+		while (j <= end)
 			array[k++] = aux[j++];
-			
 		
 	}
 

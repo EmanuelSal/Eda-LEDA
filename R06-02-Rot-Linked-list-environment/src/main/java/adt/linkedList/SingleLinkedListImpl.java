@@ -7,24 +7,28 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	
 	public SingleLinkedListImpl() {
 		this.head = new SingleLinkedListNode<T>();
-		this.elements = 0;
 	}
 	
 
 	@Override
 	public boolean isEmpty() {
-		return this.head.isNIL();
+		return this.size() == 0;
 	}
 
 	@Override
 	public int size() {
-		return this.elements;
+		int size = 0;
+		if(this.head.isNIL()) size = 0;  
+		SingleLinkedListNode aux = new SingleLinkedListNode<T>();
+		while (aux.isNIL()) {
+			size ++;
+			aux.getNext();
+		} return size;
 	}
 
 	@Override
 	public T search(T element) {
-		// TODO Auto-generated method stub
-		//throw new UnsupportedOperationException("Not implemented!");
+		
 	}
 
 	@Override

@@ -19,51 +19,58 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	@Override
 	public int size() {
 		int size = 0;
-		if(this.head.isNIL()) size = 0;  
+		//if(this.head.isNIL()) size = 0;  
 		SingleLinkedListNode<T> aux = this.head;
 		while (!aux.isNIL()) {
 			size ++;
-			aux.getNext();
+			aux = aux.getNext();
 		} return size;
 	}
 
 	@Override
 	public T search(T element) {
-		T resulT = null;
 		SingleLinkedListNode<T> auxNode = this.head;
 		while(!auxNode.isNIL()) {
 			if (auxNode.getData().equals(element)) { 
-				resulT = auxNode.getData();
+				return auxNode.getData();
 				}
-			auxNode.getNext();
+			auxNode = auxNode.getNext();
 		}
-		return resulT;
+		return null;
 		
 	}
 
 	@Override
 	public void insert(T element) {
-		SingleLinkedListNode<T> auxNode = this.head;
-		if (this.head.isNIL()) {
-			SingleLinkedListNode<T> newNode = new SingleLinkedListNode<>(element, new SingleLinkedListNode<T>());
-			this.head = newNode;
-		}
-		while(!auxNode.isNIL()) {
-			auxNode = auxNode.next;
+		if (element != null) {
+
+			SingleLinkedListNode<T> auxNode = this.head;
+			while(!auxNode.isNIL()) {
+				auxNode = auxNode.getNext();
 		}
 		auxNode.setData(element);
-		auxNode.setNext(new SingleLinkedListNode<>(element, new SingleLinkedListNode<>()));
-		head = auxNode;
+		auxNode.setNext(new SingleLinkedListNode<>());
+		//head = auxNode;
 		
-		
+		}
 		
 	}
 	
 
 	@Override
 	public void remove(T element) {
+		if (element != null && !this.isEmpty()) {
+			SingleLinkedListNode<T> auxNode = this.head;
+			while (!auxNode.isNIL() && !auxNode.getData().equals(element)) {
+				auxNode = auxNode.getNext();
+			}
+			if (!auxNode.isNIL()) {
+				auxNode.data = auxNode.getNext().getData();
+				auxNode.next = auxNode.getNext().getNext();
+			}
+		}
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented!");
+		//throw new UnsupportedOperationException("Not implemented!");
 	}
 
 	@Override
@@ -71,7 +78,7 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	public T[] toArray() {
 		T[] arraySaida = (T[]) new Object[this.size()];
 		SingleLinkedListNode<T> auxNode = this.head;
-		for (int i = 0; i < this.size(); i++) {
+		for (int i = 0; i < arraySaida.length; i++) {
 			arraySaida[i] = auxNode.getData();
 			auxNode = auxNode.getNext();
 		}

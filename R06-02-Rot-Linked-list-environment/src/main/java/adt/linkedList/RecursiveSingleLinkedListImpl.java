@@ -19,10 +19,17 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public int size() {
+<<<<<<< HEAD
+		if(isEmpty()){
+			return 0;
+		}
+		return 1 + next.size();
+=======
 		if (this.isEmpty())
 			return 0;
 
 		return 1 + this.next.size();
+>>>>>>> 7850f8c2428dc4677772c7537b02464db5c5d4c5
 	}
 
 	@Override
@@ -38,6 +45,14 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public void insert(T element) {
+<<<<<<< HEAD
+		if (isEmpty()) {
+				setData(element);
+				setNext(new RecursiveSingleLinkedListImpl<T>());
+			} else
+				this.next.insert(element);
+		}
+=======
 		if (element != null) {
 			if (this.isEmpty()) {
 				this.data = element;
@@ -46,6 +61,7 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 				this.next.insert(element);
 		}
 	}
+>>>>>>> 7850f8c2428dc4677772c7537b02464db5c5d4c5
 
 	@Override
 	public void remove(T element) {
@@ -60,6 +76,19 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public T[] toArray() {
+<<<<<<< HEAD
+		ArrayList<T> retorno = new ArrayList<>();
+		toArrayRecursivo(retorno);
+		return retorno.toArray((T[]) new Object[this.size()]);
+	}
+
+	private void toArrayRecursivo(ArrayList<T> array) {
+		if (!isEmpty()) {
+			array.add(this.data);
+			this.next.toArrayRecursivo(array);
+
+		}
+=======
 		
 		List<T> retorno = new ArrayList<>();
 		return this.toArray(retorno);
@@ -74,6 +103,7 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 
 		} 
 		return (T[]) array.toArray();
+>>>>>>> 7850f8c2428dc4677772c7537b02464db5c5d4c5
 	}	
 
 

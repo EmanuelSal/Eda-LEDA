@@ -12,6 +12,14 @@ public class RecursiveDoubleLinkedListImpl<T> extends
 	@Override
 	public void insert(T element) {
 
+		if(isEmpty()) {
+			setData(element);
+			setNext(new RecursiveDoubleLinkedListImpl<T>());
+		}
+		else
+			getNext().insert(element);
+
+
 		if (element != null) {
 
 			if (isEmpty()) { 
@@ -61,6 +69,16 @@ public class RecursiveDoubleLinkedListImpl<T> extends
 
 	@Override
 	public void insertFirst(T element) {
+
+		if(isEmpty()) {
+			setData(element);
+			setNext(new RecursiveDoubleLinkedListImpl<T>());
+		}
+		else {
+			T aux = getData();
+			setData(element);
+			((RecursiveDoubleLinkedListImpl<T>) getNext()).insertFirst(aux);
+
 		
 		if (element != null) {
 
@@ -81,11 +99,16 @@ public class RecursiveDoubleLinkedListImpl<T> extends
 			((RecursiveDoubleLinkedListImpl<T>) this.next).setNext(nodeAux);
 
 			}
+
 		}
 	}
 
 	@Override
 	public void removeFirst() {
+
+		remove(getData());
+	}
+
 		
 		if (!isEmpty()) {
 
@@ -109,6 +132,15 @@ public class RecursiveDoubleLinkedListImpl<T> extends
 	
 	@Override
 	public void removeLast() {
+
+		if(!isEmpty()) {
+			if(getNext().isEmpty()) {
+				setNext(null);
+				setData(null);
+			}
+			else
+				((RecursiveDoubleLinkedListImpl<T>) getNext()).removeLast();
+
 		
 		if (!isEmpty()) {
 

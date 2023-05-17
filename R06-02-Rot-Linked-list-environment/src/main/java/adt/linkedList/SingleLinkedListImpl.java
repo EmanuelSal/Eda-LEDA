@@ -76,8 +76,8 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	@Override
 	@SuppressWarnings("unchecked")
 	public T[] toArray() {
-		T[] arraySaida = (T[]) new Object[this.size()];
 		SingleLinkedListNode<T> auxNode = this.head;
+		T[] arraySaida = (T[]) new Object[this.size()];
 		for (int i = 0; i < arraySaida.length; i++) {
 			arraySaida[i] = auxNode.getData();
 			auxNode = auxNode.getNext();

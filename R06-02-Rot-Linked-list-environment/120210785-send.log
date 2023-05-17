@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-05-12T11:51:43.413-0300</date>
+  <logger>EMANUEL VINICIUS SA DE LIMA E LIMA</logger>
+  <level>FINE</level>
+  <message>File 120210785-EMANUEL VINICIUS SA DE LIMA E LIMA.zip was received. It was sent by EMANUEL VINICIUS SA DE LIMA E LIMA from IP 150.165.42.200 at 12-05-2023 11*51*43</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-05-12T15:48:29.909-0300</date>
+  <logger>EMANUEL VINICIUS SA DE LIMA E LIMA</logger>
+  <level>FINE</level>
+  <message>File 120210785-EMANUEL VINICIUS SA DE LIMA E LIMA.zip was received. It was sent by EMANUEL VINICIUS SA DE LIMA E LIMA from IP 192.168.15.5 at 12-05-2023 15*48*29</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-05-16T19:15:00.050-0300</date>
+  <logger>EMANUEL VINICIUS SA DE LIMA E LIMA</logger>
+  <level>FINE</level>
+  <message>File 120210785-EMANUEL VINICIUS SA DE LIMA E LIMA.zip was received. It was sent by EMANUEL VINICIUS SA DE LIMA E LIMA from IP 192.168.15.7 at 16-05-2023 19*15*00</message>
+</record>

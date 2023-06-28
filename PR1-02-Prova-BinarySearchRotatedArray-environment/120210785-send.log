@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-06-28T08:05:38.860-0300</date>
+  <logger>EMANUEL VINICIUS SA DE LIMA E LIMA</logger>
+  <level>FINE</level>
+  <message>File 120210785-EMANUEL VINICIUS SA DE LIMA E LIMA.zip was received. It was sent by EMANUEL VINICIUS SA DE LIMA E LIMA from IP 150.165.42.142 at 28-06-2023 08*05*38</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-06-28T09:38:31.126-0300</date>
+  <logger>EMANUEL VINICIUS SA DE LIMA E LIMA</logger>
+  <level>FINE</level>
+  <message>File 120210785-EMANUEL VINICIUS SA DE LIMA E LIMA.zip was received. It was sent by EMANUEL VINICIUS SA DE LIMA E LIMA from IP 150.165.42.142 at 28-06-2023 09*38*31</message>
+</record>

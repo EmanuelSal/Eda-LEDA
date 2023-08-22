@@ -1,5 +1,7 @@
 package sorting.divideAndConquer.quicksort3;
 
+import util.Util;
+
 import sorting.AbstractSorting;
 
 /**
@@ -20,7 +22,54 @@ public class QuickSortMedianOfThree<T extends Comparable<T>> extends
 		AbstractSorting<T> {
 
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
-	}
+        if (leftIndex < rightIndex) {
+            int pivot = particionaMed3(array, leftIndex, rightIndex);
+            sort(array, leftIndex, pivot - 1);
+            sort(array, pivot + 1, rightIndex);
+        }
+    }
+
+    private int particionaMed3(T[] array, int leftIndex, int rightIndex) {
+        int pivotIndex = encontrarMedianaDeTres(array, leftIndex, rightIndex);
+        Util.swap(array, pivotIndex, rightIndex);
+
+
+        T pivot = array[rightIndex];
+        int i = leftIndex - 1;
+        for (int j = leftIndex; j <= rightIndex - 1; j++) {
+            if (array[j].compareTo(pivot) <= 0) {
+                i++;
+                Util.swap(array, i, j);
+            }
+        }
+        Util.swap(array, i + 1, rightIndex);
+        return i + 1;
+    }
+
+    private int encontrarMedianaDeTres(T[] array, int leftIndex, int rightIndex) {
+        int meio = (leftIndex + rightIndex) / 2;
+        T a = array[leftIndex];
+        T b = array[meio];
+        T c = array[rightIndex];
+
+        int indexMediana = 0;
+        if (a.compareTo(b) < 0) {
+            if (b.compareTo(c) < 0) {
+                indexMediana = meio;
+            } else {
+                if (a.compareTo(c) < 0) {
+                    indexMediana = rightIndex;
+                } else {
+                    indexMediana = leftIndex;
+                }
+            }
+        } else {
+            if (c.compareTo(b) < 0) {
+                indexMediana = meio;
+            } else {
+                indexMediana = leftIndex;
+            }
+        }
+        return indexMediana;
+    }
 }

@@ -1,0 +1,10 @@
+/home/emanuel.lima/Leda2023.1/Eda-LEDA/R07-01-Rot-TAD-Linear-environment/src/main/java/adt/queue/QueueUnderflowException.java
+/home/emanuel.lima/Leda2023.1/Eda-LEDA/R07-01-Rot-TAD-Linear-environment/src/main/java/adt/stack/Stack.java
+/home/emanuel.lima/Leda2023.1/Eda-LEDA/R07-01-Rot-TAD-Linear-environment/src/main/java/adt/queue/QueueImpl.java
+/home/emanuel.lima/Leda2023.1/Eda-LEDA/R07-01-Rot-TAD-Linear-environment/src/main/java/adt/stack/StackImpl.java
+/home/emanuel.lima/Leda2023.1/Eda-LEDA/R07-01-Rot-TAD-Linear-environment/src/main/java/adt/stack/StackUnderflowException.java
+/home/emanuel.lima/Leda2023.1/Eda-LEDA/R07-01-Rot-TAD-Linear-environment/src/main/java/adt/stack/StackOverflowException.java
+/home/emanuel.lima/Leda2023.1/Eda-LEDA/R07-01-Rot-TAD-Linear-environment/src/main/java/adt/queue/Queue.java
+/home/emanuel.lima/Leda2023.1/Eda-LEDA/R07-01-Rot-TAD-Linear-environment/src/main/java/adt/queue/QueueOverflowException.java
+/home/emanuel.lima/Leda2023.1/Eda-LEDA/R07-01-Rot-TAD-Linear-environment/src/main/java/adt/queue/CircularQueue.java
+/home/emanuel.lima/Leda2023.1/Eda-LEDA/R07-01-Rot-TAD-Linear-environment/src/main/java/adt/queue/QueueUsingStack.java
